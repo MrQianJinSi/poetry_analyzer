@@ -1,0 +1,22 @@
+          roam: true,
+          label: {
+            normal: {
+              show: true,
+              position: 'inside',
+              formatter: '{b}',
+              textStyle:{
+                fontSize:10
+              }
+            }
+          },
+          force: {
+            repulsion: 100
+          }
+        }
+        ]
+      };
+
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>

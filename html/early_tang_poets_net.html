@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="echarts-all-3.js"></script>
+  </head>
+  <body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+    <script type="text/javascript">
+      var dom = document.getElementById("container");
+      var myChart = echarts.init(dom);
+
+      var option = {
+        title: {
+          text: '',
+          top: '80%',
+          left: '50%'
+        },
+        tooltip: {},
+        animation: false,
+        series : [
+        {
+          name: '唐朝诗人社交网络',
+          type: 'graph',
+          layout: 'force',
+          draggable: true,
+
+          symbolSize: 28,
+          edgeSymbol:['circle', 'arrow'],
+          edgeSymbolSize:[4, 6],
+          lineStyle:{
+            normal:{
+              curveness: 0.1,
+              color: 'rgb(50, 50, 50)'
+            }
+          },
+
+data:[
+{name: '宋之問'},
+{name: '陳子昂'},
+{name: '喬知之'},
+{name: '李世民'},
+{name: '李嶠'},
+{name: '王勃'},
+{name: '駱賓王'},
+{name: '魏徵'},
+{name: '李賢'},
+{name: '蘇味道'},
+{name: '韋承慶'},
+{name: '沈佺期'},
+{name: '盧照鄰'},
+{name: '杜審言'},
+],
+links: [
+{source: '駱賓王', target: '李嶠',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '宋之問', target: '陳子昂',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '杜審言', target: '韋承慶',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '李世民', target: '魏徵',
+  lineStyle:{normal:{width: 0.897434}}},
+  {source: '宋之問', target: '李世民',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '李嶠', target: '宋之問',
+  lineStyle:{normal:{width: 1.202395}}},
+  {source: '駱賓王', target: '宋之問',
+  lineStyle:{normal:{width: 1.202395}}},
+  {source: '陳子昂', target: '喬知之',
+  lineStyle:{normal:{width: 0.897434}}},
+  {source: '駱賓王', target: '盧照鄰',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '李嶠', target: '杜審言',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '杜審言', target: '蘇味道',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '沈佺期', target: '李賢',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '駱賓王', target: '沈佺期',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '王勃', target: '駱賓王',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '沈佺期', target: '宋之問',
+  lineStyle:{normal:{width: 2.722778}}},
+  {source: '沈佺期', target: '喬知之',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '沈佺期', target: '陳子昂',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '喬知之', target: '陳子昂',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '宋之問', target: '杜審言',
+  lineStyle:{normal:{width: 0.897434}}},
+  {source: '宋之問', target: '沈佺期',
+  lineStyle:{normal:{width: 3.000000}}},
+  {source: '李嶠', target: '駱賓王',
+  lineStyle:{normal:{width: 0.500000}}},
+  ],
+          roam: true,
+          label: {
+            normal: {
+              show: true,
+              position: 'inside',
+              formatter: '{b}',
+              textStyle:{
+                fontSize:10
+              }
+            }
+          },
+          force: {
+            repulsion: 100
+          }
+        }
+        ]
+      };
+
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>

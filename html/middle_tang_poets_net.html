@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="echarts-all-3.js"></script>
+  </head>
+  <body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+    <script type="text/javascript">
+      var dom = document.getElementById("container");
+      var myChart = echarts.init(dom);
+
+      var option = {
+        title: {
+          text: '',
+          top: '80%',
+          left: '50%'
+        },
+        tooltip: {},
+        animation: false,
+        series : [
+        {
+          name: '唐朝诗人社交网络',
+          type: 'graph',
+          layout: 'force',
+          draggable: true,
+
+          symbolSize: 28,
+          edgeSymbol:['circle', 'arrow'],
+          edgeSymbolSize:[4, 6],
+          lineStyle:{
+            normal:{
+              curveness: 0.1,
+              color: 'rgb(50, 50, 50)'
+            }
+          },
+
+data:[
+{name: '姚合'},
+{name: '孟郊'},
+{name: '白居易'},
+{name: '王建'},
+{name: '薛濤'},
+{name: '王涯'},
+{name: '賈島'},
+{name: '柳宗元'},
+{name: '李紳'},
+{name: '呂溫'},
+{name: '楊巨源'},
+{name: '權德輿'},
+{name: '郎士元'},
+{name: '韓愈'},
+{name: '元稹'},
+{name: '鄭錫'},
+{name: '李端'},
+{name: '盧綸'},
+{name: '劉禹錫'},
+{name: '張籍'},
+{name: '李益'},
+{name: '張繼'},
+],
+links: [
+{source: '孟郊', target: '李益',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '柳宗元', target: '劉禹錫',
+  lineStyle:{normal:{width: 0.803931}}},
+  {source: '白居易', target: '劉禹錫',
+  lineStyle:{normal:{width: 2.279531}}},
+  {source: '姚合', target: '賈島',
+  lineStyle:{normal:{width: 1.016676}}},
+  {source: '白居易', target: '李紳',
+  lineStyle:{normal:{width: 1.154857}}},
+  {source: '賈島', target: '李益',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '元稹', target: '楊巨源',
+  lineStyle:{normal:{width: 0.759181}}},
+  {source: '王建', target: '李益',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '元稹', target: '薛濤',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '李益', target: '盧綸',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '張籍', target: '賈島',
+  lineStyle:{normal:{width: 0.759181}}},
+  {source: '張籍', target: '白居易',
+  lineStyle:{normal:{width: 0.709681}}},
+  {source: '白居易', target: '韓愈',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '白居易', target: '楊巨源',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '韓愈', target: '賈島',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '孟郊', target: '韓愈',
+  lineStyle:{normal:{width: 0.919363}}},
+  {source: '韓愈', target: '柳宗元',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '賈島', target: '韓愈',
+  lineStyle:{normal:{width: 0.709681}}},
+  {source: '姚合', target: '張籍',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '盧綸', target: '李端',
+  lineStyle:{normal:{width: 0.845084}}},
+  {source: '劉禹錫', target: '白居易',
+  lineStyle:{normal:{width: 2.643987}}},
+  {source: '姚合', target: '劉禹錫',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '姚合', target: '王建',
+  lineStyle:{normal:{width: 0.709681}}},
+  {source: '王建', target: '張籍',
+  lineStyle:{normal:{width: 0.803931}}},
+  {source: '王建', target: '楊巨源',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '張籍', target: '韓愈',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '盧綸', target: '郎士元',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '賈島', target: '張籍',
+  lineStyle:{normal:{width: 0.709681}}},
+  {source: '張籍', target: '孟郊',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '劉禹錫', target: '元稹',
+  lineStyle:{normal:{width: 0.985753}}},
+  {source: '劉禹錫', target: '張籍',
+  lineStyle:{normal:{width: 0.759181}}},
+  {source: '賈島', target: '孟郊',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '劉禹錫', target: '李紳',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '李端', target: '郎士元',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '韓愈', target: '李紳',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '劉禹錫', target: '柳宗元',
+  lineStyle:{normal:{width: 0.709681}}},
+  {source: '權德輿', target: '張籍',
+  lineStyle:{normal:{width: 0.709681}}},
+  {source: '張繼', target: '郎士元',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '賈島', target: '王建',
+  lineStyle:{normal:{width: 0.709681}}},
+  {source: '劉禹錫', target: '呂溫',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '李端', target: '鄭錫',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '元稹', target: '白居易',
+  lineStyle:{normal:{width: 2.257305}}},
+  {source: '元稹', target: '王建',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '李端', target: '盧綸',
+  lineStyle:{normal:{width: 0.883387}}},
+  {source: '郎士元', target: '張繼',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '韓愈', target: '劉禹錫',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '張籍', target: '王建',
+  lineStyle:{normal:{width: 0.845084}}},
+  {source: '張籍', target: '姚合',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '孟郊', target: '張籍',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '韓愈', target: '張籍',
+  lineStyle:{normal:{width: 1.129044}}},
+  {source: '白居易', target: '元稹',
+  lineStyle:{normal:{width: 3.000000}}},
+  {source: '李紳', target: '白居易',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '韓愈', target: '王涯',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '韓愈', target: '孟郊',
+  lineStyle:{normal:{width: 1.016676}}},
+  {source: '賈島', target: '姚合',
+  lineStyle:{normal:{width: 0.803931}}},
+  {source: '孟郊', target: '王涯',
+  lineStyle:{normal:{width: 0.586853}}},
+  {source: '元稹', target: '劉禹錫',
+  lineStyle:{normal:{width: 0.653497}}},
+  {source: '盧綸', target: '李益',
+  lineStyle:{normal:{width: 0.759181}}},
+  {source: '白居易', target: '張籍',
+  lineStyle:{normal:{width: 1.074875}}},
+  ],
+          roam: true,
+          label: {
+            normal: {
+              show: true,
+              position: 'inside',
+              formatter: '{b}',
+              textStyle:{
+                fontSize:10
+              }
+            }
+          },
+          force: {
+            repulsion: 100
+          }
+        }
+        ]
+      };
+
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="echarts-all-3.js"></script>
+  </head>
+  <body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+    <script type="text/javascript">
+      var dom = document.getElementById("container");
+      var myChart = echarts.init(dom);
+
+      var option = {
+        title: {
+          text: '',
+          top: '80%',
+          left: '50%'
+        },
+        tooltip: {},
+        animation: false,
+        series : [
+        {
+          name: '唐朝诗人社交网络',
+          type: 'graph',
+          layout: 'force',
+          draggable: true,
+
+          symbolSize: 28,
+          edgeSymbol:['circle', 'arrow'],
+          edgeSymbolSize:[4, 6],
+          lineStyle:{
+            normal:{
+              curveness: 0.1,
+              color: 'rgb(50, 50, 50)'
+            }
+          },
+
+data:[
+{name: '杜荀鶴'},
+{name: '陸龜蒙'},
+{name: '崔珏'},
+{name: '許渾'},
+{name: '李商隱'},
+{name: '羅隱'},
+{name: '杜牧'},
+{name: '張喬'},
+{name: '吳融'},
+{name: '黃滔'},
+{name: '韓偓'},
+{name: '陳陶'},
+{name: '令狐楚'},
+{name: '韋莊'},
+{name: '皮日休'},
+{name: '司空圖'},
+{name: '崔道融'},
+{name: '劉駕'},
+{name: '貫休'},
+{name: '趙嘏'},
+],
+links: [
+{source: '劉駕', target: '張喬',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '杜牧', target: '趙嘏',
+  lineStyle:{normal:{width: 0.639633}}},
+  {source: '羅隱', target: '陸龜蒙',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '李商隱', target: '崔珏',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '貫休', target: '韓偓',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '羅隱', target: '韋莊',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '杜牧', target: '李商隱',
+  lineStyle:{normal:{width: 0.639633}}},
+  {source: '韓偓', target: '許渾',
+  lineStyle:{normal:{width: 0.579008}}},
+  {source: '陸龜蒙', target: '吳融',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '黃滔', target: '貫休',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '張喬', target: '陳陶',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '韋莊', target: '許渾',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '貫休', target: '吳融',
+  lineStyle:{normal:{width: 0.579008}}},
+  {source: '許渾', target: '趙嘏',
+  lineStyle:{normal:{width: 0.639633}}},
+  {source: '李商隱', target: '杜牧',
+  lineStyle:{normal:{width: 0.639633}}},
+  {source: '貫休', target: '羅隱',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '杜牧', target: '許渾',
+  lineStyle:{normal:{width: 0.848757}}},
+  {source: '趙嘏', target: '杜牧',
+  lineStyle:{normal:{width: 0.639633}}},
+  {source: '趙嘏', target: '許渾',
+  lineStyle:{normal:{width: 0.690742}}},
+  {source: '貫休', target: '皮日休',
+  lineStyle:{normal:{width: 0.579008}}},
+  {source: '韋莊', target: '貫休',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '李商隱', target: '令狐楚',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '皮日休', target: '陸龜蒙',
+  lineStyle:{normal:{width: 2.398728}}},
+  {source: '韋莊', target: '杜荀鶴',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '羅隱', target: '貫休',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '吳融', target: '韓偓',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '陸龜蒙', target: '李商隱',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '吳融', target: '貫休',
+  lineStyle:{normal:{width: 0.639633}}},
+  {source: '陸龜蒙', target: '皮日休',
+  lineStyle:{normal:{width: 3.000000}}},
+  {source: '杜荀鶴', target: '張喬',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '許渾', target: '杜牧',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '崔珏', target: '李商隱',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '杜荀鶴', target: '羅隱',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '司空圖', target: '崔道融',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '李商隱', target: '皮日休',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '杜荀鶴', target: '陳陶',
+  lineStyle:{normal:{width: 0.500000}}},
+  {source: '貫休', target: '陳陶',
+  lineStyle:{normal:{width: 0.579008}}},
+  {source: '韓偓', target: '吳融',
+  lineStyle:{normal:{width: 0.579008}}},
+  ],
+          roam: true,
+          label: {
+            normal: {
+              show: true,
+              position: 'inside',
+              formatter: '{b}',
+              textStyle:{
+                fontSize:10
+              }
+            }
+          },
+          force: {
+            repulsion: 100
+          }
+        }
+        ]
+      };
+
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>

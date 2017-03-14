@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="echarts-all-3.js"></script>
+  </head>
+  <body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+    <script type="text/javascript">
+      var dom = document.getElementById("container");
+      var myChart = echarts.init(dom);
+
+      var option = {
+        title: {
+          text: '',
+          top: '80%',
+          left: '50%'
+        },
+        tooltip: {},
+        animation: false,
+        series : [
+        {
+          name: '唐朝诗人社交网络',
+          type: 'graph',
+          layout: 'force',
+          draggable: true,
+
+          symbolSize: 28,
+          edgeSymbol:['circle', 'arrow'],
+          edgeSymbolSize:[4, 6],
+          lineStyle:{
+            normal:{
+              curveness: 0.1,
+              color: 'rgb(50, 50, 50)'
+            }
+          },
+
+data:[
+{name: '錢起'},
+{name: '崔國輔'},
+{name: '張旭'},
+{name: '賀知章'},
+{name: '蘇頲'},
+{name: '韓翃'},
+{name: '皇甫冉'},
+{name: '李嘉祐'},
+{name: '岑參'},
+{name: '嚴武'},
+{name: '薛稷'},
+{name: '劉方平'},
+{name: '劉長卿'},
+{name: '儲光羲'},
+{name: '張說'},
+{name: '杜甫'},
+{name: '高適'},
+{name: '張謂'},
+{name: '孟浩然'},
+{name: '王昌齡'},
+{name: '李隆基'},
+{name: '李白'},
+{name: '王維'},
+{name: '張繼'},
+],
+links: [
+{source: '李白', target: '王昌齡',
+  lineStyle:{normal:{width: 1.044859}}},
+  {source: '李白', target: '孟浩然',
+  lineStyle:{normal:{width: 1.419995}}},
+  {source: '皇甫冉', target: '劉方平',
+  lineStyle:{normal:{width: 1.860883}}},
+  {source: '儲光羲', target: '王維',
+  lineStyle:{normal:{width: 1.244292}}},
+  {source: '杜甫', target: '岑參',
+  lineStyle:{normal:{width: 1.419995}}},
+  {source: '岑參', target: '王昌齡',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '李白', target: '賀知章',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '蘇頲', target: '張說',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '孟浩然', target: '崔國輔',
+  lineStyle:{normal:{width: 1.044859}}},
+  {source: '錢起', target: '王維',
+  lineStyle:{normal:{width: 1.419995}}},
+  {source: '李隆基', target: '張說',
+  lineStyle:{normal:{width: 1.044859}}},
+  {source: '張謂', target: '劉長卿',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '張繼', target: '皇甫冉',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '高適', target: '杜甫',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '李白', target: '杜甫',
+  lineStyle:{normal:{width: 1.044859}}},
+  {source: '蘇頲', target: '李白',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '王維', target: '王昌齡',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '李嘉祐', target: '皇甫冉',
+  lineStyle:{normal:{width: 1.044859}}},
+  {source: '杜甫', target: '李隆基',
+  lineStyle:{normal:{width: 1.044859}}},
+  {source: '嚴武', target: '杜甫',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '韓翃', target: '張繼',
+  lineStyle:{normal:{width: 1.244292}}},
+  {source: '杜甫', target: '李白',
+  lineStyle:{normal:{width: 2.334010}}},
+  {source: '賀知章', target: '張說',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '劉長卿', target: '皇甫冉',
+  lineStyle:{normal:{width: 2.109365}}},
+  {source: '王昌齡', target: '王維',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '皇甫冉', target: '張繼',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '孟浩然', target: '王昌齡',
+  lineStyle:{normal:{width: 1.244292}}},
+  {source: '高適', target: '王昌齡',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '張繼', target: '韓翃',
+  lineStyle:{normal:{width: 1.244292}}},
+  {source: '杜甫', target: '嚴武',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '王維', target: '錢起',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '杜甫', target: '孟浩然',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '杜甫', target: '張旭',
+  lineStyle:{normal:{width: 1.044859}}},
+  {source: '錢起', target: '杜甫',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '劉長卿', target: '李嘉祐',
+  lineStyle:{normal:{width: 1.244292}}},
+  {source: '杜甫', target: '高適',
+  lineStyle:{normal:{width: 2.109365}}},
+  {source: '王昌齡', target: '高適',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '李白', target: '張旭',
+  lineStyle:{normal:{width: 1.044859}}},
+  {source: '杜甫', target: '薛稷',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '皇甫冉', target: '劉長卿',
+  lineStyle:{normal:{width: 3.000000}}},
+  {source: '王維', target: '孟浩然',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '李嘉祐', target: '劉長卿',
+  lineStyle:{normal:{width: 1.244292}}},
+  {source: '岑參', target: '李嘉祐',
+  lineStyle:{normal:{width: 0.808296}}},
+  {source: '劉長卿', target: '張謂',
+  lineStyle:{normal:{width: 0.808296}}},
+  ],
+          roam: true,
+          label: {
+            normal: {
+              show: true,
+              position: 'inside',
+              formatter: '{b}',
+              textStyle:{
+                fontSize:10
+              }
+            }
+          },
+          force: {
+            repulsion: 100
+          }
+        }
+        ]
+      };
+
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>
