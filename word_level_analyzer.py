@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+
 from collections import Counter, defaultdict
 import thulac
 import pickle
@@ -33,13 +36,13 @@ def cut_qts_to_words(qts_file, saved_words_file):
         author = text_segs[2]
         author_counter[author] += 1
 
-        poem = text_segs[-1]
+        poem = text_segs[-1].decode('utf8') # decode to unicode for range check
         # 去除非汉字字符
-        valid_char_list = [c for c in poem if '\u4e00' <= c <= '\u9fff' or c == '，' or c == '。']
+        valid_char_list = [c for c in poem if u'\u4e00' <= c <= u'\u9fff' or c == u'，' or c == u'。']
         for char in valid_char_list:
           char_counter[char] += 1
 
-        regularized_poem = ''.join(valid_char_list)
+        regularized_poem = ''.join(valid_char_list).encode('utf8') # encode back to utf8 for further process
         word_genre_pairs = lex_analyzer.cut(regularized_poem)
 
         word_list = []
@@ -96,21 +99,21 @@ def print_stat_results(char_counter, author_counter, genre_counter, vector_model
   print_counter(char_counter.most_common(12))
   # 季节排名
   print('\n季节排名')
-  for c in ['春', '夏', '秋', '冬']:
+  for c in [u'春', u'夏', u'秋', u'冬']:
     print(c, char_counter[c])
   # 颜色排名
   print('\n颜色排名')
-  colors = ['红', '白', '青', '蓝', '绿', '紫', '黑', '黄']
+  colors = [u'红', u'白', u'青', u'蓝', u'绿', u'紫', u'黑', u'黄']
   for c in colors:
     print(c, char_counter[c])
   # 植物排名
   print('\n植物排名')
-  plants = ['梅', '兰', '竹', '菊', '松', '柳', '枫', '桃', '梨', '杏']
+  plants = [u'梅', u'兰', u'竹', u'菊', u'松', u'柳', u'枫', u'桃', u'梨', u'杏']
   for p in plants:
     print(p, char_counter[p])
   # 动物排名
   print('\n动物排名')
-  age_animals = ['鼠', '牛', '虎', '兔', '龙', '蛇', '马', '羊', '猴', '鸡', '狗', '猪']
+  age_animals = [u'鼠', u'牛', u'虎', u'兔', u'龙', u'蛇', u'马', u'羊', u'猴', u'鸡', u'狗', u'猪']
   for a in age_animals:
     print(a, char_counter[a])
 
@@ -131,11 +134,11 @@ def print_stat_results(char_counter, author_counter, genre_counter, vector_model
   print('\n\n基于词向量的分析')
   # print(vector_model['今日'])
   def print_similar_words(word):
-    print('\n与"%s"比较意思比较接近的词' % word)
+    print('\n与"%s"比较意思比较接近的词' % word.encode('utf8'))
     print_counter(vector_model.most_similar(word))
 
-  print_similar_words('天子')
-  print_similar_words('寂寞')
+  print_similar_words(u'天子')
+  print_similar_words(u'寂寞')
 
 
 def main():
