@@ -1,2 +1,4 @@
 data/cbdb_sqlite.db
 save/
+html/
+*.pyc
