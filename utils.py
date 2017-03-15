@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+
 import sqlite3
 from collections import defaultdict
 
@@ -49,7 +52,7 @@ def get_alter_names_from_CBDB(db_file, authors_set, manual_defuzzy_authors_id):
       # 比如"贯休"在CBDB中的名字为"释贯休"
       author_pattern = '%' + author
       cursor.execute('SELECT c_personid, c_birthyear, c_deathyear FROM BIOG_MAIN WHERE c_name_chn LIKE?',
-                     (author_pattern,))
+                     (author_pattern.decode('utf8'),))
       person_info_list = cursor.fetchall()
 
       # 排除重名现象
