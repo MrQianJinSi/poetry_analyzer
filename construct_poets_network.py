@@ -114,6 +114,10 @@ def main():
                       help='directory to pickle intermediate data')
   args = parser.parse_args()
 
+  # 检查存储目录是否存在
+  if not os.path.isdir(args.save_dir):
+    os.makedirs(args.save_dir)
+
   qts_list, authors_filtered_by_CBDB, alter_names_dict = get_alter_names(args.qts_path, args.cbdb_path, args.save_dir)
   get_refer_relations(qts_list, authors_filtered_by_CBDB, alter_names_dict, args.save_dir)
 
