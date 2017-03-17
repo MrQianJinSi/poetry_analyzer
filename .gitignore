@@ -4,3 +4,5 @@ data/cbdb_sqlite.db
 save/*
 # 忽略html网页文件
 html/*
+# 忽略python编译档
+*.pyc

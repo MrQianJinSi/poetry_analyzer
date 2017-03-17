@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+
 import pickle
 import argparse
 import os
@@ -9,26 +12,26 @@ from utils import read_qts, get_alter_names_from_CBDB
 # 這些詩人在CBDB的重名难以轻易排除，手動查找其在BIOG_MAIN表中的ID
 # 注意CBDB使用的是繁體中文
 manual_defuzzy_authors_id = {
-    '李林甫': 32534, '王建': 92047,
-    '李賀': 93012, '張繼': 93495,
-    '張旭': 93409, '李紳': 92982}
+    u'李林甫': 32534, u'王建': 92047,
+    u'李賀': 93012, u'張繼': 93495,
+    u'張旭': 93409, u'李紳': 92982}
 # 手動刪除某些作者
-mannual_deleted_authors = set(['無作', '清江'])
+mannual_deleted_authors = set([u'無作', u'清江'])
 # 手動刪除作者的某些別稱，这些别称在唐诗中是常用字
-mannual_deleted_alter_names = {'李林甫': set(['李十']),
-    '李益': set(['李十']),
-    '李世民': set(['李二']),
-    '李嘉祐': set(['李二']),
-    '馬湘': set(['自然']),
-    '高駢': set(['千里']),
-    '孟浩然': set(['浩然']),
-    '李白': set(['太白']),
-    '黃巢': set(['皇帝']),
-    '眉娘': set(['逍遙'])}
+mannual_deleted_alter_names = {u'李林甫': set([u'李十']),
+    u'李益': set([u'李十']),
+    u'李世民': set([u'李二']),
+    u'李嘉祐': set([u'李二']),
+    u'馬湘': set([u'自然']),
+    u'高駢': set([u'千里']),
+    u'孟浩然': set([u'浩然']),
+    u'李白': set([u'太白']),
+    u'黃巢': set([u'皇帝']),
+    u'眉娘': set([u'逍遙'])}
 # 補充CBDB中缺少的部分作者別稱
 mannual_added_alter_names = {
-    '李建': set(['李十一']),
-    '劉禹錫': set(['劉二十八'])
+    u'李建': set([u'李十一']),
+    u'劉禹錫': set([u'劉二十八'])
     }
 
 def get_alter_names(qts_file, cbdb_file, save_dir):
@@ -88,6 +91,10 @@ def get_refer_relations(qts_list, authors_filtered_by_CBDB, alter_names_dict, sa
         # 查找别名
         alt_names = alter_names_dict[name]
         for alt_name in alt_names:
+          try:
+            alt_name = alt_name.encode('utf8')
+          except:
+            pass
           if poem.find(alt_name) != -1:
             reference_relations_counter[(author, name)] += 1
             reference_relations_text[(author, name)].append(title)
