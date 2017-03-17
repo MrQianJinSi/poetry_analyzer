@@ -8,11 +8,11 @@
 - 分析词频和词向量，对应第一篇文章
 - 构建诗人之间的引用关系，对应第二篇文章
 
-目前仅支持python3，而且我只在linux下运行过，但是原理上来说在Windows下应该也没问题。
-程序主要有三个目录：
+master分枝仅支持python3。python2分枝(感谢网友[carryme9527](https://github.com/carryme9527/poetry_analyzer)的工作，这个分枝主要是他的功劳)则支持python2。
+程序主要有两个目录：
 - data目录，用于存储全唐诗和CBDB数据库
-- save目录，用于存储一些中间运算结果
 - html目录，存储最终的社交网络关系网页
+程序在运算过程中会dump一些中间运算结果，并存储在save目录(如果不存在会自动创建)中。
 
 由于CBDB数据库很大，有400+M。github不允许上传这么大的文件，请大家自行去[CBDB官网](http://projects.iq.harvard.edu/chinesecbdb/%E4%B8%8B%E8%BC%89cbdb%E5%96%AE%E6%A9%9F%E7%89%88)下载单机版数据库，并且以cbdb_sqlite.db为文件名存储在data目录下。
 # 依赖库
@@ -21,7 +21,7 @@
 pip3 install thulac
 pip3 install gensim
 ```
-其中thulac用于分词，gensim用于word2vec
+其中thulac用于分词，gensim用于word2vec.
 这两个库只用于第一篇文章的分析。如果您只关心如何构建诗人关系网络，那么不需要安装这个两个库。
 
 # 基本用法
