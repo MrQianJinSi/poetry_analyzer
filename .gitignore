@@ -1,0 +1,6 @@
+# CBDB太大了，不加入repo
+data/cbdb_sqlite.db
+# 忽略中间运算结果
+save/
+# 忽略html网页文件
+html/
