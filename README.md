@@ -12,6 +12,7 @@ master分枝仅支持python3。python2分枝(感谢网友[carryme9527](https://g
 程序主要有两个目录：
 - data目录，用于存储全唐诗和CBDB数据库
 - html目录，存储最终的社交网络关系网页
+
 程序在运算过程中会dump一些中间运算结果，并存储在save目录(如果不存在会自动创建)中。
 
 由于CBDB数据库很大，有400+M。github不允许上传这么大的文件，请大家自行去[CBDB官网](http://projects.iq.harvard.edu/chinesecbdb/%E4%B8%8B%E8%BC%89cbdb%E5%96%AE%E6%A9%9F%E7%89%88)下载单机版数据库，并且以cbdb_sqlite.db为文件名存储在data目录下。
