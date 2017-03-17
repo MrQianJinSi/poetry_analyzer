@@ -146,6 +146,11 @@ def main():
                       help='file path to save Quan Tangshi words data')
   args = parser.parse_args()
 
+  # 检查存储目录是否存在
+  save_dir = os.path.dirname(args.words_path)
+  if not os.path.isdir(save_dir):
+    os.makedirs(save_dir)
+
   char_counter, author_counter, genre_counter = cut_qts_to_words(args.qts_path, args.words_path)
   vector_model = word2vec(args.words_path)
 
