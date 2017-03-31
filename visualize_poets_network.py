@@ -82,14 +82,14 @@ def generate_html_page(relations, max_refer_count, min_refer_count, saved_html_f
   data_text += '],\n'
 
   # 读取html的head和tail部分
-  with open(html_head_path) as f:
+  with open(html_head_path, 'r', encoding = 'utf-8') as f:
     head_text = f.read()
 
-  with open(html_tail_path) as f:
+  with open(html_tail_path, 'r', encoding = 'utf-8') as f:
     tail_text = f.read()
 
   # 合并存储为html
-  with open(saved_html_file, 'w') as f:
+  with open(saved_html_file, 'w', encoding = 'utf-8') as f:
     f.write(head_text + data_text + links_text + tail_text)
 
 

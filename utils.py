@@ -6,7 +6,7 @@ def read_qts(file_name):
   qts_list = []
   authors_set = set()
   # 逐行读取诗歌
-  with open(file_name) as f:
+  with open(file_name, 'r', encoding = 'utf-8') as f:
     for line in f:
       text_segs = line.split()
       title = text_segs[1]

@@ -24,10 +24,10 @@ def cut_qts_to_words(qts_file, saved_words_file):
     word_counter = Counter()  # 词频统计
     genre_counter = defaultdict(Counter)  # 针对每个词性的Counter
 
-    fid_save = open(saved_words_file, 'w')
+    fid_save = open(saved_words_file, 'w', encoding = 'utf-8')
     lex_analyzer = thulac.thulac()  # 分词器
     line_cnt = 0
-    with open(qts_file) as f:
+    with open(qts_file, 'r', encoding = 'utf-8') as f:
       for line in f:
         text_segs = line.split()
         author = text_segs[2]
