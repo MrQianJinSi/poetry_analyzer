@@ -122,7 +122,7 @@ def main():
 
   for authors_file_name, html_file_name, threshold in files_name_array:
     authors_file_path = os.path.join(args.data_dir, authors_file_name)
-    with open(authors_file_path) as f:
+    with open(authors_file_path, 'r', encoding='utf-8') as f:
       text = f.read()
     authors = set(text.split())
 
